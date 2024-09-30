@@ -33,7 +33,6 @@ type (
 	MongoDB struct {
 		User     string `mapstructure:"user" validate:"required"`
 		Password string `mapstructure:"password" validate:"required"`
-		Database string `mapstructure:"database" validate:"required"`
 		Host     string `mapstructure:"host" validate:"required"`
 		Port     int    `mapstructure:"port" validate:"required"`
 	}
