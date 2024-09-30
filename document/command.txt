@@ -1,0 +1,23 @@
+# รันคำสั่งต่อไปนี้เพื่อเริ่มต้น container
+docker-compose up -d
+
+# ตรวจสอบสถานะของ container
+docker ps
+
+# หยุด container ทั้งหมด
+docker-compose down
+
+# สร้างฐานข้อมูล MariaDB
+go run databases/migration/migration.go
+
+# เพิ่มข้อมูลเข้าฐานข้อมูล
+go run databases/migrationV2/migrationV2.go 
+
+# Start server
+go run main.go
+
+
+ผมเข้า MariaDB คือ DBeaver และ MongoDb ด้วย MongoDB Compass
+
+
+mongodb://root:1234@0.0.0.0:27030/
